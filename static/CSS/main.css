@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     font-family: sans-serif;
-    background-color: rgb(50, 90, 179);
+    background-color: rgb(199, 205, 219);
 }
 
 .content {
@@ -10,6 +10,7 @@ body, html {
 }
 
 table, td, th {
+    background-color: beige;
     border: 1px solid #aaa;
 }
 
@@ -33,4 +34,5 @@ td {
 
 #content {
     width: 70%;
+
 }

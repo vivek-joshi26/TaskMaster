@@ -10,7 +10,7 @@
         <!-- So when we click on update this page appears and then if we click on Update Task button it will go to the /update/id with POST method -->
          <form action="/update/{{task.id}}" method="POST">
             <!-- By default earlier content will be shown in the text section -->
-            <input type="text" name="content" id="content" value="{{task.content}}">
+            <input type="text" name="content" id="content" value="{{task.content}}" required>
             <input type="submit" value="Update Task">
          </form>
     </div>
