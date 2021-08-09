@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Task Master</title> 
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center;">Update Task</h1>
+    <div class="form">
+        <!-- So when we click on update this page appears and then if we click on Update Task button it will go to the /update/id with POST method -->
+         <form action="/update/{{task.id}}" method="POST">
+            <!-- By default earlier content will be shown in the text section -->
+            <input type="text" name="content" id="content" value="{{task.content}}">
+            <input type="submit" value="Update Task">
+         </form>
+    </div>
+</div>
+{% endblock %}

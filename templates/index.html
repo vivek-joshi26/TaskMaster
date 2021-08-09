@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Task Master</title> 
+{% endblock %}
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center;">Task Master</h1>
+
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center;">There are no tasks, create one below</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        <!-- The GET request from index method gets routed here and then a foreach loop will be executed for each record passed in the tasks list --->
+        {% for task in tasks %}
+        <tr>
+            <!-- we print the task details that is returned from the Todo table -->
+            <td>{{ task.content }}</td>
+            <td>{{ task.date_created.date() }}</td>
+            <td>
+                <!-- This will route to /delete/id url -->
+                <a href="/delete/{{task.id}}">Delete</a>
+                <br>
+                 <!-- This will route to /update/id url -->
+                <a href="/update/{{task.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+</div>
+{% endblock %}
